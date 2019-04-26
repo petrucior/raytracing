@@ -16,21 +16,25 @@
 
 // Compilação: g++ -o t main.cpp -lopengl32 -lglu32 -lglut32 -lm cena.hpp cena.cpp objeto.hpp objeto.cpp vetor.hpp vetor.cpp raio.hpp raio.cpp luz.hpp luz.cpp ray_tracing.hpp ray_tracing.cpp
  
-//#include <w32api/GL/gl.h>
-//#include <w32api/GL/glu.h>
-//#include <w32api/GL/glut.h>
-#include <GL/gl.h>
+#ifdef __unix__  // Unix
+#include <GL/gl.h>  //GLdouble, Glint, glDrawPixels                             
 #include <GL/glu.h>
-#include <GL/glut.h>
-#include <iostream>         //std::endl, std::cin e std::cout
-#include <ctime>			//clock		
-#include "cena.hpp"			//rayTracing::Cena
-#include "objeto.hpp"		//rayTracing::Objeto
-#include "vetor.hpp"		//rayTracing::Vetor
-#include "raio.hpp"     	//rayTracing::Raio
-#include "luz.hpp"			//rayTracing::Luz
-#include "textura.hpp"		//rayTracing::Textura
-#include "ray_tracing.hpp"	//rayTracing::Ray_tracing
+#include <GL/glut.h> //gluUnProject                                             
+#else  // Windows                                                               
+#include <w32api/GL/gl.h> //GLdouble, Glint, glDrawPixels                       
+#include <w32api/GL/glu.h>
+#include <w32api/GL/glut.h> //gluUnProject                                      
+#endif
+
+#include <iostream> //std::endl, std::cin e std::cout
+#include <ctime> //clock		
+#include "cena.hpp" //rayTracing::Cena
+#include "objeto.hpp" //rayTracing::Objeto
+#include "vetor.hpp" //rayTracing::Vetor
+#include "raio.hpp" //rayTracing::Raio
+#include "luz.hpp" //rayTracing::Luz
+#include "textura.hpp" //rayTracing::Textura
+#include "ray_tracing.hpp" //rayTracing::Ray_tracing
 
 using rayTracing::Vetor;
 using rayTracing::Raio;

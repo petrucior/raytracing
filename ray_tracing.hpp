@@ -24,12 +24,16 @@
 #include "luz.hpp"			//rayTracing::Luz
 #include "objeto.hpp"		//rayTracing::Objeto
 #include "cena.hpp"			//rayTracing::Cena
-//#include <w32api/GL/gl.h>	//GLdouble, Glint, glDrawPixels
-//#include <w32api/GL/glu.h>
-//#include <w32api/GL/glut.h>	//gluUnProject
-#include <GL/gl.h>		//GLdouble, Glint, glDrawPixels
+
+#ifdef __unix__  // Unix
+#include <GL/gl.h>  //GLdouble, Glint, glDrawPixels
 #include <GL/glu.h>
-#include <GL/glut.h>		//gluUnProject
+#include <GL/glut.h> //gluUnProject
+#else  // Windows
+#include <w32api/GL/gl.h> //GLdouble, Glint, glDrawPixels
+#include <w32api/GL/glu.h>
+#include <w32api/GL/glut.h> //gluUnProject
+#endif
 
 /** 
  * \defgroup RayTracingNameSpace Namespace rayTracing.
