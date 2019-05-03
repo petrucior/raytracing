@@ -91,8 +91,8 @@ namespace rayTracing{
     Cena* cena_auxiliar = new Cena();				//Objetivo de nao perder os objetos da cena
     Objeto* objeto_salvo = new Objeto();				//Objeto que sera pintado
     double t_aux;							//t calculado para o objeto pintado
-    for (int i = 0; i < cena->lado(); i++){				//lado
-      for (int j = 0; j < cena->altura(); j++){			//Altura
+    for (int i = 0; i < cena->lado(); i+=10){				//lado
+      for (int j = 0; j < cena->altura(); j+=10){			//Altura
 	//Colocando valor absurdo para o t para primeiro valor
 	t_aux = -1.0;
 	//Encontrando lookat's
