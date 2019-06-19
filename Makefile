@@ -25,7 +25,8 @@ INCS=
 #
 # A variável LIBS indica o caminho das bibliotecas e as bibliotecas usadas na ligação
 #
-LIBS= -lm -lGL -lglut -lGLU
+#LIBS= -lm -lGL -lglut -lGLU
+LIBS= /System/Library/Frameworks/GLUT.framework/GLUT /System/Library/Frameworks/OpenGL.framework/OpenGL
 #LIBS= -lopengl32 -lglut32 -lglu32
 
 #

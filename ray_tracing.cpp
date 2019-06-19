@@ -28,11 +28,16 @@
 #include <GL/gl.h>		//GLdouble, Glint, glDrawPixels
 #include <GL/glu.h>
 #include <GL/glut.h>		//gluUnProject
-#else  // Windows
+#else // Apple
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#include <GLUT/glut.h>
+#endif
+/*#else  // Windows
 #include <w32api/GL/gl.h>	//GLdouble, Glint, glDrawPixels
 #include <w32api/GL/glu.h>
 #include <w32api/GL/glut.h>	//gluUnProject
-#endif
+#endif*/
 
 /** 
  * \defgroup RayTracingNameSpace Namespace rayTracing.

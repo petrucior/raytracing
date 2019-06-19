@@ -19,12 +19,17 @@
 #ifdef __unix__  // Unix
 #include <GL/gl.h>  //GLdouble, Glint, glDrawPixels                             
 #include <GL/glu.h>
-#include <GL/glut.h> //gluUnProject                                             
-#else  // Windows                                                               
+#include <GL/glut.h> //gluUnProject
+#else // Apple
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#include <GLUT/glut.h>
+#endif
+/*#else  // Windows                                                               
 #include <w32api/GL/gl.h> //GLdouble, Glint, glDrawPixels                       
 #include <w32api/GL/glu.h>
 #include <w32api/GL/glut.h> //gluUnProject                                      
-#endif
+#endif*/
 
 #include <iostream> //std::endl, std::cin e std::cout
 #include <ctime> //clock		
